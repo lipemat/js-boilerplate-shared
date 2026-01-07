@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JsBuildToolPackageJson" sorting="DEFINITION_ORDER" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>PHP</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Php Inspections (EA Extended)PHP</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Code quality toolsCSS</id>
+          </State>
+          <State>
+            <id>PHP</id>
+          </State>
+          <State>
+            <id>Php Inspections (EA Extended)PHP</id>
+          </State>
+          <State>
+            <id>Quality toolsPHP</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Stylelint</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="showWarnings" value="true" />
+  </component>
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="windows-1252" />
+    <option name="myConnectionType" value="NONE" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../../../starting-point/wp-content/plugins/create-block-theme/admin/create-theme/cbt-zip-archive.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
