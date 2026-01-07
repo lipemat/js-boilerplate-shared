@@ -1,2 +1,2 @@
 export {getExtensionsConfig} from './helpers/config';
-export {getPackageConfig} from './helpers/package-config';
+export {getPackageConfig, type PackageConfig} from './helpers/package-config';
