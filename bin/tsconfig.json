@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Build config for TS files required to be transpiled to CommonJS.",
+  "compilerOptions": {
+    // Must be CommonJS to use helpers from @lipemat/js-boilerplate.
+    "module": "CommonJS",
+    "sourceMap": true
+  },
+  "include": [
+    "../helpers/**/*.ts"
+  ]
+}

@@ -27,7 +27,7 @@ function js_tests() {
     echo "${YELLOW}[pre-commit]${GREEN} JS Tests Passed!${RESET_COLOR}"
 
 }
-#####  js_tests &
+js_tests &
 
 
 function js_lint() {
