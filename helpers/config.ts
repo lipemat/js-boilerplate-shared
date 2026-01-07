@@ -1,6 +1,6 @@
 import {getPackageConfig} from './package-config';
 
-const {dependencies, devDependencies, workingDirectory, packageDirectory} = getPackageConfig();
+const {dependencies, devDependencies} = getPackageConfig();
 
 const extensions = [
 	...Object.keys( dependencies ?? {} ).filter( name => name.includes( 'js-boilerplate-' ) ),
