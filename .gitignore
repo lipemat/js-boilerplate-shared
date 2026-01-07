@@ -1,0 +1,100 @@
+################################
+#
+# @version 6.4.1
+#
+################################
+
+# Project specific
+#### Put project specific exclusions here so they may be easily transferred when updating gitignore.
+# Dist files
+/index.js
+helpers/**/*.js
+plugins/**/*.js
+/types
+*.map
+
+
+
+# system/hidden files
+*.bak
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+*.swp
+*~
+.DS_Store
+.DS_Store?
+.Trashes
+.cvs
+.eslintcache
+.phpcs.cache
+.phpunit.cache
+.phpunit.result.cache
+.project
+.ready
+.running
+.sass-cache
+.stylelintcache
+.svn
+.vscode
+Thumbs.db
+apple-developer-merchantid-domain-association
+ehthumbs.db
+tsconfig.tsbuildinfo
+
+# log files
+*.log
+
+# local configs
+local-config.php
+local-config.json
+phpcs.xml
+phpstan.neon
+phpunit.xml
+
+# Yarn Berry files
+install-state.gz
+build-state.yml
+node_modules
+
+.revision
+deploy
+
+# keep files (must be last).
+!.gitkeep
+!.keep
+
+# PHPStorm files
+# https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
+# User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+# AWS User-specific
+.idea/**/aws.xml
+# Generated files
+.idea/**/contentModel.xml
+# Sensitive or high-churn files
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+# JIRA plugin
+atlassian-ide-plugin.xml
+# Editor-based HTTP Client
+.idea/httpRequests
+http-client.private.env.json
+# Copilot
+.idea/copilot
+.idea/copilotDiffState.xml
+.idea/copilot.data.migration.*
+# System configs
+.idea/csv-editor.xml
+.idea/csv-plugin.xml
+.idea/php.xml
+.idea/sshConfigs.xml

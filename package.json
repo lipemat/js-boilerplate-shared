@@ -1,0 +1,40 @@
+{
+  "name": "@lipemat/js-boilerplate-shared",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Shared utilities for all @lipemat boilerplate packages",
+  "engines": {
+    "node": ">=22.21.0"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "helpers"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lipemat/js-boilerplate-shared.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lipemat/js-boilerplate-shared/issues"
+  },
+  "homepage": "https://github.com/lipemat/js-boilerplate-shared#readme",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "yarn run build",
+    "test": "lipemat-js-boilerplate test",
+    "validate-ts": "tsc --noEmit",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "core-js": "^3.33.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.3",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "yarn@4.12.0"
+}

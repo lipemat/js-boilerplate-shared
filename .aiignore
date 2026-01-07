@@ -1,0 +1,65 @@
+################################################################
+#
+# Files excluded from AI analysis.
+#
+# @link https://www.jetbrains.com/help/ai-assistant/disable-ai-assistant.html?ai.assistant.settings.disable#restrict-ai-assistant-usage-in-specific-files-or-folders
+#
+# @version 1.0.1
+#
+################################################################
+
+# Project specific
+#### Put project specific exclusions here so they may be easily transferred when updating aiignore.
+
+
+
+# system/hidden files
+*.bak
+*.sublime-project
+*.sublime-workspace
+*.swp
+*~
+.DS_Store
+.DS_Store?
+.Trashes
+.cvs
+.eslintcache
+.phpcs.cache
+.phpunit.cache
+.phpunit.result.cache
+.project
+.ready
+.running
+.sass-cache
+.stylelintcache
+.svn
+.vscode
+Thumbs.db
+ehthumbs.db
+tsconfig.tsbuildinfo
+
+# log files
+*.log
+
+# WordPress specific
+wp-content/backup-db
+wp-content/blogs.dir
+wp-content/cache
+wp-content/cache/supercache
+wp-content/logs
+wp-content/upgrade
+wp-content/upgrade-temp-backup
+wp-content/uploads/*
+
+# Yarn Berry files
+install-state.gz
+build-state.yml
+node_modules
+.yarn
+
+
+# theme - compiled files
+_css-modules-json
+dist
+.revision
+deploy
