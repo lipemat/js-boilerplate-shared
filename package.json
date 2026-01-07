@@ -9,6 +9,8 @@
   "main": "index.js",
   "files": [
     "index.js",
+    "utility.d.ts",
+    "types",
     "helpers"
   ],
   "repository": {

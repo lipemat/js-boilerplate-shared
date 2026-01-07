@@ -3,7 +3,9 @@
   "display": "Shared Boilerplate",
   "include": [
     "index.ts",
-    "helpers/**/*"
+    "utility.d.ts",
+    "helpers/**/*",
+    "types/**/*"
   ],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,

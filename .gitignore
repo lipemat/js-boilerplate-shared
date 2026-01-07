@@ -10,7 +10,6 @@
 /index.js
 helpers/**/*.js
 plugins/**/*.js
-/types
 *.map
 
 
