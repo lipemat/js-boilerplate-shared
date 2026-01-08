@@ -1,4 +1,4 @@
-import jestConfig from '../config/jest.config.mjs';
+import jestConfig from '../config/jest.config.js';
 
 jestConfig.moduleNameMapper = {
 	...jestConfig.moduleNameMapper,

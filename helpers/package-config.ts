@@ -1,5 +1,9 @@
 import {resolve} from 'path';
-import {realpathSync} from 'node:fs';
+import {readFileSync, realpathSync} from 'node:fs';
+
+function readJsonFile<T>( filePath: string ): T {
+	return JSON.parse( readFileSync( filePath, 'utf8' ) ) as T;
+}
 
 export interface PackageConfig {
 	author?: string;
@@ -58,12 +62,12 @@ const defaults: Partial<PackageConfig> = {
 	url: 'http://localhost',
 };
 
-let packageConfig: PackageConfig = require( resolve( workingDirectory, 'package.json' ) );
+let packageConfig: PackageConfig = readJsonFile<PackageConfig>( resolve( workingDirectory, 'package.json' ) );
 packageConfig = {...defaults, ...packageConfig};
 packageConfig.workingDirectory = packageConfig.jsPath !== '' ? resolve( packageConfig.jsPath ) : workingDirectory;
 
 try {
-	const localConfig = require( resolve( workingDirectory, './local-config.json' ) );
+	const localConfig = readJsonFile<Partial<PackageConfig>>( resolve( workingDirectory, './local-config.json' ) );
 	packageConfig = {...packageConfig, ...localConfig};
 } catch {
 }

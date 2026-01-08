@@ -1,5 +1,5 @@
 import {ALPHABET, getLocalIdent, getNextClass, resetCounters, SHORT_ALPHABET, usingShortCssClasses} from '../../../helpers/css-classnames';
-import {LoaderContext} from 'webpack';
+import type {LoaderContext} from 'webpack';
 import type {PackageConfig} from '../../../helpers/package-config';
 
 // Change this variable during tests.
@@ -69,19 +69,19 @@ describe( 'Test CSS Classname Generation', () => {
 		mockShortCssEnabled = {
 			js: false,
 			pcss: true,
-		}
+		};
 		expect( usingShortCssClasses() ).toBe( false );
 
 		mockShortCssEnabled = {
 			js: true,
 			pcss: false,
-		}
+		};
 		expect( usingShortCssClasses() ).toBe( true );
 
 		mockShortCssEnabled = {
 			js: true,
 			pcss: true,
-		}
+		};
 		expect( usingShortCssClasses() ).toBe( true );
 	} );
 } );

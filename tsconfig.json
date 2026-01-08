@@ -10,7 +10,7 @@
     "strictBindCallApply": true,
     "strictNullChecks": true,
     "target": "ES2024",
-    "verbatimModuleSyntax": false,
+    "verbatimModuleSyntax": true,
     "strict": true
   },
   "include": [
@@ -18,8 +18,5 @@
     "helpers/**/*.ts",
     "jest/**/*.ts",
     "types/**/*"
-  ],
-  "exclude": [
-    "node_modules"
   ]
 }

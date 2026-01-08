@@ -1,4 +1,7 @@
 import {getPackageConfig} from './package-config';
+import {createRequire} from 'node:module';
+
+const requireModule = createRequire( import.meta.url );
 
 const {dependencies, devDependencies} = getPackageConfig();
 
@@ -23,7 +26,7 @@ export function getExtensionsConfig<T extends object>( fileName: string, default
 	let mergedConfig: T = {} as T;
 	extensions.forEach( extension => {
 		try {
-			let extensionConfig = require( extension + '/config/' + fileName );
+			let extensionConfig = requireModule( extension + '/config/' + fileName );
 			// For ES Modules, we need to use the default export.
 			if ( 'default' in extensionConfig ) {
 				extensionConfig = extensionConfig.default;
