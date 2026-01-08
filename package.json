@@ -24,7 +24,7 @@
     "build": "tsc --project ./bin",
     "lint": "eslint --fix --cache",
     "prepublishOnly": "yarn run build",
-    "test": "lipemat-js-boilerplate test",
+    "test": "jest --config ./jest/jest.config.ts",
     "validate-ts": "tsc --noEmit",
     "watch": "tsc --project ./bin --watch"
   },
@@ -32,12 +32,13 @@
     "core-js": "^3.33.1"
   },
   "devDependencies": {
+    "@jest/types": "^30.2.0",
     "@lipemat/eslint-config": "file:../eslint-config",
-    "@lipemat/js-boilerplate": "file:../js-boilerplate",
     "@types/jest": "^30.0.0",
     "@types/node": "^22.19.3",
     "eslint": "^9",
-    "jest": "^30.1.1",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.6",
     "typescript": "^5.9.3",
     "webpack": "^5.101.0"
   },

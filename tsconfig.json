@@ -1,16 +1,25 @@
 {
-  "extends": "@lipemat/js-boilerplate/config/tsconfig.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Shared Boilerplate",
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "target": "ES2024"
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strictBindCallApply": true,
+    "strictNullChecks": true,
+    "target": "ES2024",
+    "verbatimModuleSyntax": false,
+    "strict": true
   },
   "include": [
     "index.ts",
     "helpers/**/*.ts",
     "jest/**/*.ts",
     "types/**/*"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
