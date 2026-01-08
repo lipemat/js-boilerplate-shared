@@ -8,6 +8,7 @@
 #### Put project specific exclusions here so they may be easily transferred when updating gitignore.
 # Dist files
 /index.js
+config/**/*js
 helpers/**/*.js
 plugins/**/*.js
 *.map

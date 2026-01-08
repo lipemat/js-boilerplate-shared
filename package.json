@@ -9,8 +9,9 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "types",
-    "helpers"
+    "config",
+    "helpers",
+    "types"
   ],
   "repository": {
     "type": "git",
