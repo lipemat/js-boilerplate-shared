@@ -1,6 +1,6 @@
 import {getPackageConfig} from './package-config';
 import type {GetLocalIdent} from '../types/css-loader';
-import type {AtLeast} from '../utility';
+import type {AtLeast} from '../types/utility';
 
 export const SHORT_ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 export const ALPHABET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';

@@ -9,7 +9,6 @@
   },
   "include": [
     "index.ts",
-    "utility.d.ts",
     "helpers/**/*.ts",
     "jest/**/*.ts",
     "types/**/*"
