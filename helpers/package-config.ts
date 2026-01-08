@@ -49,23 +49,12 @@ export interface Scripts {
 
 
 const workingDirectory = realpathSync( process.cwd() );
-/**
- * @todo In version 11 change default values
- * 1. brotliFiles: true
- * 2. cssTsFiles: true
- * 3. shortCssClasses: true
- * 4. jsPath: './js'
- *
- * @note Must be coordinated with version 5 of postcss-boilerplate
- *
- * Update Readme.md to reflect these changes.
- */
 const defaults: Partial<PackageConfig> = {
-	brotliFiles: false,
-	cssTsFiles: false,
-	jsPath: './',
+	brotliFiles: true,
+	cssTsFiles: true,
+	jsPath: './js',
 	packageDirectory: workingDirectory,
-	shortCssClasses: false,
+	shortCssClasses: true,
 	url: 'http://localhost',
 };
 
@@ -84,8 +73,6 @@ try {
  *
  * - Allows mocking the results of `packageConfig` for testing.
  * - Allows getting the config through a callback instead of an import.
- *
- * @since 10.3.0
  */
 export function getPackageConfig(): PackageConfig {
 	return packageConfig;
