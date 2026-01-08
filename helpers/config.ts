@@ -1,4 +1,4 @@
-import {getPackageConfig} from './package-config';
+import {getPackageConfig} from './package-config.js';
 import {createRequire} from 'node:module';
 
 const requireModule = createRequire( import.meta.url );
