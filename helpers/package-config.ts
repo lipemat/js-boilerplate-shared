@@ -81,3 +81,12 @@ try {
 export function getPackageConfig(): PackageConfig {
 	return packageConfig;
 }
+
+/**
+ * Modify the `packageConfig` object.
+ *
+ * - Here mainly for testing purposes.
+ */
+export function modifyPackageConfig( additions: Partial<PackageConfig> ): void {
+	packageConfig = {...packageConfig, ...additions};
+}
