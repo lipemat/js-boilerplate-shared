@@ -1,6 +1,6 @@
-import {ALPHABET, getLocalIdent, getNextClass, resetCounters, SHORT_ALPHABET, usingShortCssClasses} from '../../../helpers/css-classnames';
+import {ALPHABET, getLocalIdent, getNextClass, resetCounters, SHORT_ALPHABET, usingShortCssClasses} from '../../../helpers/css-classnames.js';
 import type {LoaderContext} from 'webpack';
-import type {PackageConfig} from '../../../helpers/package-config';
+import type {PackageConfig} from '../../../helpers/package-config.js';
 
 // Change this variable during tests.
 let mockShortCssEnabled: PackageConfig['shortCssClasses'] = false;
