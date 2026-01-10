@@ -99,3 +99,14 @@ export function getBrowsersList(): readonly string[] {
 	}
 	return projectBrowsersList;
 }
+
+/**
+ * Ensure the file extension is .js.
+ */
+export function ensureJSExtension( fileName: string ): string {
+	const withoutExtension = fileName.replace( /\.(ts|js)$/, '' );
+	if ( ! withoutExtension.endsWith( '.js' ) ) {
+		return withoutExtension + '.js';
+	}
+	return withoutExtension;
+}
