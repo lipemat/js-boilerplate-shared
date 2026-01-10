@@ -37,6 +37,7 @@
     "@types/clean-css": "^4.2.11",
     "@types/postcss-load-config": "^3.0.1",
     "@types/postcss-preset-env": "^7.7.0",
+    "@types/webpack": "^5.28.5",
     "babel-plugin-transform-import-meta": "^2.3.3",
     "browserslist": "^4.28.1",
     "clean-css": "^5.3.3",
