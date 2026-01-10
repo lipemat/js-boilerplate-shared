@@ -2112,14 +2112,15 @@ __metadata:
 
 "@lipemat/js-boilerplate-shared@file:../js-boilerplate-shared::locator=%40lipemat%2Feslint-config%40file%3A..%2Feslint-config%23..%2Feslint-config%3A%3Ahash%3D7e8c56%26locator%3D%2540lipemat%252Fjs-boilerplate-shared%2540workspace%253A.":
   version: 0.0.1
-  resolution: "@lipemat/js-boilerplate-shared@file:../js-boilerplate-shared#../js-boilerplate-shared::hash=c72de1&locator=%40lipemat%2Feslint-config%40file%3A..%2Feslint-config%23..%2Feslint-config%3A%3Ahash%3D7e8c56%26locator%3D%2540lipemat%252Fjs-boilerplate-shared%2540workspace%253A."
+  resolution: "@lipemat/js-boilerplate-shared@file:../js-boilerplate-shared#../js-boilerplate-shared::hash=2caec1&locator=%40lipemat%2Feslint-config%40file%3A..%2Feslint-config%23..%2Feslint-config%3A%3Ahash%3D7e8c56%26locator%3D%2540lipemat%252Fjs-boilerplate-shared%2540workspace%253A."
   dependencies:
     "@babel/preset-env": "npm:^7.28.5"
     "@babel/preset-typescript": "npm:^7.28.5"
+    babel-plugin-transform-import-meta: "npm:^2.3.3"
     core-js: "npm:^3.33.1"
   peerDependencies:
     typescript: ^5.9.3
-  checksum: 10c0/58714ae246c966cceb59060c23a4d6487a59278480496c98da6fa6bcde59fc59a596167925af929de80a34afee897fee49f3d6df09a4ba8f8ceda728db53da1e
+  checksum: 10c0/2e2905fda01b8305eeb6dc1ee39ac26909eb79af463ecfd57ba8bbc8bf4af1b63afc00bbb5795d88476c6c8f2735ebe95fc1ac2221f215dd58f32c075737b61a
   languageName: node
   linkType: hard
 
@@ -2407,20 +2408,20 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 25.0.3
-  resolution: "@types/node@npm:25.0.3"
+  version: 25.0.4
+  resolution: "@types/node@npm:25.0.4"
   dependencies:
     undici-types: "npm:~7.16.0"
-  checksum: 10c0/b7568f0d765d9469621615e2bb257c7fd1953d95e9acbdb58dffb6627a2c4150d405a4600aa1ad8a40182a94fe5f903cafd3c0a2f5132814debd0e3bfd61f835
+  checksum: 10c0/2882a2e986b1aed993c63a6d53b04d1518430e3ec7e8620bd925d1f48632c262ea3ecd3b2201f5c57cff61dd477269762fea5acceae7f4e77de6037399c3f06c
   languageName: node
   linkType: hard
 
 "@types/node@npm:^22.19.3":
-  version: 22.19.3
-  resolution: "@types/node@npm:22.19.3"
+  version: 22.19.4
+  resolution: "@types/node@npm:22.19.4"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10c0/a30a75d503da795ddbd5f8851014f3e91925c2a63fa3f14128d54c998f25d682dfba96dc9589c73cf478b87a16d88beb790b11697bb8cd5bee913079237a58f2
+  checksum: 10c0/475d02a9809a87802a689bd936533a5510b5df55200df6e287f81dc7cbfe4ada85bfcad9b53d7fd9f2dc75110521505b9811f1e68bbff69b5e3d8c9d0cda7364
   languageName: node
   linkType: hard
 
@@ -3704,11 +3705,11 @@ __metadata:
   linkType: hard
 
 "baseline-browser-mapping@npm:^2.9.0":
-  version: 2.9.12
-  resolution: "baseline-browser-mapping@npm:2.9.12"
+  version: 2.9.14
+  resolution: "baseline-browser-mapping@npm:2.9.14"
   bin:
     baseline-browser-mapping: dist/cli.js
-  checksum: 10c0/15b0ce64e5741c9bbd0ae9328b4cec9e59516b1b839bab949d7ba00c52e6c693bb7c34fc9e79a51957b92a9889d945ff720c73635418c35dbd46c041682df024
+  checksum: 10c0/c9bf03c65e9a6690e4abbe60c269ad14ce5578cac09fed51ff1ed6e899e049afb094c2b173365cb2397d48012a83747500db6e79dca2761faf548aee10574d3d
   languageName: node
   linkType: hard
 
@@ -3851,9 +3852,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001759":
-  version: 1.0.30001762
-  resolution: "caniuse-lite@npm:1.0.30001762"
-  checksum: 10c0/93707eac5b0240af3f2ce6e2d7ab504a6fefcf9c2f9cd8fb9d488e496a333c61e557dab0472c1b00c17bc386a5dbb792aa4c778cda2d768e17f986617d7aec53
+  version: 1.0.30001763
+  resolution: "caniuse-lite@npm:1.0.30001763"
+  checksum: 10c0/4524f6ae15a18c8510849e43baed01441940c50cab29687cba62dde6354a49549d5bcb7f79b864dadf3f0c8c342038c63131cdb64af382a501593106b1d0028b
   languageName: node
   linkType: hard
 
