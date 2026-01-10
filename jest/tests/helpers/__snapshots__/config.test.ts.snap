@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`config getBrowsersList: browserslist 1`] = `
+[
+  "and_chr 143",
+  "android 143",
+  "chrome 143",
+  "chrome 142",
+  "chrome 139",
+  "chrome 112",
+  "edge 143",
+  "edge 142",
+  "firefox 146",
+  "firefox 145",
+  "ios_saf 26.2",
+  "ios_saf 26.1",
+  "ios_saf 18.5-18.7",
+  "opera 125",
+  "opera 124",
+  "safari 26.2",
+  "safari 26.1",
+  "samsung 29",
+]
+`;
+
+exports[`config getBrowsersList: expectedBrowsers 1`] = `
+[
+  "> 1%",
+  "last 1 Android versions",
+  "last 1 ChromeAndroid versions",
+  "last 2 Chrome versions",
+  "last 2 Firefox versions",
+  "last 2 Safari versions",
+  "last 2 iOS versions",
+  "last 2 Edge versions",
+  "last 2 Opera versions",
+]
+`;

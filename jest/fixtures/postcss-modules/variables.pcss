@@ -1,0 +1,34 @@
+/**
+ * Variables shared across entire site for both JS and PostCSS.
+ */
+:root {
+	/** colors **/
+	--c-black: #282828;
+	--c-grey: #787c82;
+	--c-link: #e5554e;
+	--c-white: #fff;
+	--c-yellow: #bd8600;
+
+	/** Layout **/
+	--content-width: 1200px;
+
+	/** fonts **/
+	--font-content: 'Source Sans Pro', sans-serif;
+	--font-headers: 'Oswald', sans-serif;
+
+	/** Z-Index **/
+	--z-index-cover: 100;
+	--z-index-high: 20;
+	--z-index-higher: 30;
+	--z-index-low: 1;
+	--z-index-middle: 10;
+	--z-index-tips: 1000;
+
+	@media (--first-breakpoint ) {
+		--content-width: 1200px;
+	}
+
+	@media (--second-breakpoint ) {
+		--content-width: 800px;
+	}
+}

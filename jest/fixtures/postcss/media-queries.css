@@ -1,0 +1,48 @@
+.Ⓜmedia-queries__genesis-nav-menu__qJ {
+	background: teal;
+}
+
+.Ⓜmedia-queries__header__nV {
+	background: chocolate;
+}
+
+@media (any-hover: hover) {
+	.Ⓜmedia-queries__genesis-nav-menu__qJ:hover ul {
+		background: purple;
+	}
+}
+
+@media (hover: hover) {
+	.Ⓜmedia-queries__second__JP:hover {
+		display: none;
+	}
+}
+
+@media ( width <= 960px) {
+	.Ⓜmedia-queries__genesis-nav-menu__qJ {
+		float: none
+	}
+}
+
+@media (width <= 800px) {
+	.Ⓜmedia-queries__genesis-nav-menu__qJ {
+		display: none
+	}
+}
+
+@media (width <= 480px) {
+	.Ⓜmedia-queries__genesis-nav-menu__qJ {
+		display: inline-flex
+	}
+	@media (hover: hover) {
+		.Ⓜmedia-queries__genesis-nav-menu__qJ:hover ul {
+			background: red;
+		}
+	}
+}
+
+@media print {
+	.Ⓜmedia-queries__genesis-nav-menu__qJ {
+		display: none
+	}
+}

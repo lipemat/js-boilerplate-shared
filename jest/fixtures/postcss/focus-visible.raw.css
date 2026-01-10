@@ -1,0 +1,7 @@
+.focused :root {
+	--color: lemonchiffon;
+}
+
+.focused:focus-visible {
+	outline: var(--color);
+}

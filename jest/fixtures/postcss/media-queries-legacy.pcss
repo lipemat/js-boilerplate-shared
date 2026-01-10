@@ -1,0 +1,75 @@
+@custom-media --desktop (min-width: 1200px);
+
+@custom-media --first-breakpoint (max-width: 1200px);
+
+@custom-media --second-breakpoint (max-width: 960px);
+
+@custom-media --tablet (max-width: 1200px) and (min-width: 800px);
+
+@custom-media --mobile (max-width: 800px);
+
+@custom-media --small-width (max-width: 480px);
+
+.genesis-nav-menu {
+	background: teal;
+
+	@media (--mobile) {
+		display: none;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			ul {
+				background: purple;
+			}
+		}
+	}
+
+	@media print {
+		display: none;
+	}
+
+	@media (--small-width) {
+		display: inline-flex;
+
+		@media (hover: hover) {
+			&:hover {
+				ul {
+					background: red;
+				}
+			}
+		}
+	}
+
+	@media (--second-breakpoint ) {
+		float: none;
+	}
+}
+
+.second {
+	@media (--small-width) {
+		display: inline-flex;
+
+		@media (hover: hover) {
+			&:hover {
+				ul {
+					background: red;
+				}
+			}
+		}
+	}
+
+	@media (--second-breakpoint ) {
+		float: none;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			display: none;
+		}
+	}
+}
+
+.header {
+	background: chocolate;
+}

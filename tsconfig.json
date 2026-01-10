@@ -16,7 +16,7 @@
   "include": [
     "index.ts",
     "helpers/**/*.ts",
-    "jest/**/*.ts",
+    "jest/tests/**/*.ts",
     "types/**/*"
   ]
 }

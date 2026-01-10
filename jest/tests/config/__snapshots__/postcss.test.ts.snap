@@ -1,0 +1,238 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`postcss.js PostCSS config: develop 1`] = `
+{
+  "parser": "postcss-scss",
+  "plugins": [
+    {
+      "postcssPlugin": "postcss-global-data",
+      "prepare": [Function],
+    },
+    {
+      "Once": [Function],
+      "postcssPlugin": "postcss-import",
+    },
+    [Function],
+    [Function],
+    {
+      "plugins": [
+        {
+          "postcssPlugin": "postcss-normalize-display-values",
+          "prepare": [Function],
+        },
+        {
+          "AtRule": [Function],
+          "postcssPlugin": "postcss-font-format-keywords",
+        },
+        {
+          "Declaration": [Function],
+          "postcssPlugin": "postcss-oklab-function",
+        },
+        {
+          "postcssPlugin": "postcss-text-decoration-shorthand",
+          "prepare": [Function],
+        },
+        {
+          "AtRule": [Function],
+          "Once": [Function],
+          "postcssPlugin": "postcss-custom-media",
+        },
+        {
+          "Rule": [Function],
+          "postcssPlugin": "postcss-nesting",
+        },
+        {
+          "Rule": [Function],
+          "postcssPlugin": "postcss-dir-pseudo-class",
+        },
+        {
+          "Declaration": [Function],
+          "postcssPlugin": "postcss-lab-function",
+        },
+        {
+          "Rule": [Function],
+          "postcssPlugin": "css-blank-pseudo",
+        },
+        {
+          "Declaration": [Function],
+          "postcssPlugin": "postcss-page-break",
+        },
+        {
+          "Once": [Function],
+          "postcssPlugin": "postcss-font-variant",
+        },
+        {
+          "Declaration": [Function],
+          "postcssPlugin": "postcss-stepped-value-functions",
+        },
+        {
+          "browsers": [
+            "> 1%",
+            "last 1 Android versions",
+            "last 1 ChromeAndroid versions",
+            "last 2 Chrome versions",
+            "last 2 Firefox versions",
+            "last 2 Safari versions",
+            "last 2 iOS versions",
+            "last 2 Edge versions",
+            "last 2 Opera versions",
+          ],
+          "info": [Function],
+          "options": {
+            "overrideBrowserslist": [
+              "> 1%",
+              "last 1 Android versions",
+              "last 1 ChromeAndroid versions",
+              "last 2 Chrome versions",
+              "last 2 Firefox versions",
+              "last 2 Safari versions",
+              "last 2 iOS versions",
+              "last 2 Edge versions",
+              "last 2 Opera versions",
+            ],
+          },
+          "postcssPlugin": "autoprefixer",
+          "prepare": [Function],
+        },
+        {
+          "RuleExit": [Function],
+          "postcssPlugin": "postcss-progressive-custom-properties",
+        },
+        {
+          "OnceExit": [Function],
+          "postcssPlugin": "postcss-preset-env",
+        },
+      ],
+      "postcssPlugin": "postcss-preset-env",
+    },
+    [Function],
+    {
+      "OnceExit": [Function],
+      "postcssPlugin": "postcss-sort-media-queries",
+    },
+    {
+      "OnceExit": [Function],
+      "postcssPlugin": "js-boilerplate/postcss-pretty",
+    },
+  ],
+  "sourceMap": true,
+}
+`;
+
+exports[`postcss.js PostCSS config: production 1`] = `
+{
+  "parser": "postcss-scss",
+  "plugins": [
+    {
+      "postcssPlugin": "postcss-global-data",
+      "prepare": [Function],
+    },
+    {
+      "Once": [Function],
+      "postcssPlugin": "postcss-import",
+    },
+    [Function],
+    [Function],
+    {
+      "plugins": [
+        {
+          "postcssPlugin": "postcss-normalize-display-values",
+          "prepare": [Function],
+        },
+        {
+          "AtRule": [Function],
+          "postcssPlugin": "postcss-font-format-keywords",
+        },
+        {
+          "Declaration": [Function],
+          "postcssPlugin": "postcss-oklab-function",
+        },
+        {
+          "postcssPlugin": "postcss-text-decoration-shorthand",
+          "prepare": [Function],
+        },
+        {
+          "AtRule": [Function],
+          "Once": [Function],
+          "postcssPlugin": "postcss-custom-media",
+        },
+        {
+          "Rule": [Function],
+          "postcssPlugin": "postcss-nesting",
+        },
+        {
+          "Rule": [Function],
+          "postcssPlugin": "postcss-dir-pseudo-class",
+        },
+        {
+          "Declaration": [Function],
+          "postcssPlugin": "postcss-lab-function",
+        },
+        {
+          "Rule": [Function],
+          "postcssPlugin": "css-blank-pseudo",
+        },
+        {
+          "Declaration": [Function],
+          "postcssPlugin": "postcss-page-break",
+        },
+        {
+          "Once": [Function],
+          "postcssPlugin": "postcss-font-variant",
+        },
+        {
+          "Declaration": [Function],
+          "postcssPlugin": "postcss-stepped-value-functions",
+        },
+        {
+          "browsers": [
+            "> 1%",
+            "last 1 Android versions",
+            "last 1 ChromeAndroid versions",
+            "last 2 Chrome versions",
+            "last 2 Firefox versions",
+            "last 2 Safari versions",
+            "last 2 iOS versions",
+            "last 2 Edge versions",
+            "last 2 Opera versions",
+          ],
+          "info": [Function],
+          "options": {
+            "overrideBrowserslist": [
+              "> 1%",
+              "last 1 Android versions",
+              "last 1 ChromeAndroid versions",
+              "last 2 Chrome versions",
+              "last 2 Firefox versions",
+              "last 2 Safari versions",
+              "last 2 iOS versions",
+              "last 2 Edge versions",
+              "last 2 Opera versions",
+            ],
+          },
+          "postcssPlugin": "autoprefixer",
+          "prepare": [Function],
+        },
+        {
+          "RuleExit": [Function],
+          "postcssPlugin": "postcss-progressive-custom-properties",
+        },
+        {
+          "OnceExit": [Function],
+          "postcssPlugin": "postcss-preset-env",
+        },
+      ],
+      "postcssPlugin": "postcss-preset-env",
+    },
+    [Function],
+    {
+      "OnceExit": [Function],
+      "postcssPlugin": "postcss-sort-media-queries",
+    },
+    {
+      "OnceExit": [Function],
+      "postcssPlugin": "clean",
+    },
+  ],
+}
+`;

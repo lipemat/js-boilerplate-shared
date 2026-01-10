@@ -1,0 +1,114 @@
+{
+  "name": "@lipemat/js-boilerplate",
+  "version": "11.0.0-alpha.0",
+  "description": "Dependencies and scripts for a no config JavaScript app",
+  "author": "Mat Lipe",
+  "license": "MIT",
+  "jsPath": "./",
+  "type": "module",
+  "engines": {
+    "node": ">=22.21.1"
+  },
+  "bugs": {
+    "url": "https://github.com/lipemat/js-boilerplate/issues"
+  },
+  "homepage": "https://github.com/lipemat/js-boilerplate#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lipemat/js-boilerplate.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "boilerplate",
+    "ES6",
+    "no-config"
+  ],
+  "files": [
+    "tsconfig.json",
+    "bin/",
+    "config/",
+    "helpers/",
+    "lib/",
+    "scripts/",
+    "types/"
+  ],
+  "bin": {
+    "lipemat-js-boilerplate": "bin/lipemat-js-boilerplate.js"
+  },
+  "scripts": {
+    "browserslist": "lipemat-js-boilerplate browserslist",
+    "build": "tsc --project ./bin",
+    "prepublishOnly": "yarn run build",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --config=jest/jest.config.ts",
+    "validate-ts": "tsc --noEmit",
+    "watch": "tsc --project ./bin --watch"
+  },
+  "dependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@csstools/postcss-global-data": "2.0.0",
+    "@lipemat/js-boilerplate-shared": "link:../js-boilerplate-shared",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.6.1",
+    "@statoscope/webpack-plugin": "^5.29.0",
+    "@types/babel__preset-env": "^7.9.6",
+    "@types/clean-css": "^4.2.11",
+    "@types/postcss-load-config": "^3.0.1",
+    "@types/postcss-preset-env": "^7.7.0",
+    "@wordpress/browserslist-config": "^6.19.0",
+    "babel-jest": "^30.2.0",
+    "babel-loader": "^10.0.0",
+    "browserslist": "^4.28.1",
+    "chalk": "^4.0",
+    "clean-css": "^5.3.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "compression-webpack-plugin": "^10.0.0",
+    "core-js": "^3.33.1",
+    "cross-spawn": "^7.0.6",
+    "css-loader": "6.7.1",
+    "fork-ts-checker-webpack-plugin": "^7.2.13",
+    "html-webpack-plugin": "^5.5.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "mini-css-extract-plugin": "^2.9.2",
+    "minimist": "^1.2.8",
+    "postcss": "^8.4.47",
+    "postcss-color-mod-function": "^4.1.1",
+    "postcss-custom-media": "^8.0.1",
+    "postcss-import": "^15.1.0",
+    "postcss-loader": "^8.1.1",
+    "postcss-nested": "^5.0.6",
+    "postcss-preset-env": "^7.8.3",
+    "postcss-scss": "^4.0.4",
+    "postcss-sort-media-queries": "^5.2.0",
+    "react-refresh": "^0.17.0",
+    "style-loader": "^3.3.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.9.3",
+    "webpack": "^5.101.0",
+    "webpack-assets-manifest": "^6.2.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2",
+    "webpack-subresource-integrity": "^5.1.0"
+  },
+  "devDependencies": {
+    "@jest/globals": "^30.2.0",
+    "@lipemat/eslint-config": "^5.1.4",
+    "@types/jest": "^29.5.3",
+    "@types/minimist": "^1",
+    "@types/node": "^22.19.3",
+    "@types/react": "^18.2.64",
+    "chokidar": "^3.5.3",
+    "eslint": "^9",
+    "glob": "^11.1.0",
+    "jest": "^30.2.0",
+    "memfs": "^3.5.3",
+    "react": "^18.2.0",
+    "setimmediate": "^1.0.5"
+  },
+  "resolutions": {
+    "type-fest": "^4.41.0"
+  },
+  "packageManager": "yarn@4.12.0"
+}

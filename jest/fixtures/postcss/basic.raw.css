@@ -1,0 +1,11 @@
+body {
+	background: red;
+}
+
+.some-class {
+	background: orangered;
+}
+
+.some-class .sub-class {
+	background: lemonchiffon;
+}

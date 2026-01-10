@@ -1,0 +1,56 @@
+.header {
+	background: #800080;
+	border: 4px solid #000;
+
+	a {
+		padding: 4px;
+	}
+}
+
+.heading {
+	background: var(--c-yellow);
+	padding: 14px;
+
+	@media ( --mobile ) {
+		background: var(--c-black);
+	}
+}
+
+.home {
+	background: #32cd32;
+	margin: 5px;
+	text-align: center;
+	width: 300px;
+
+	a {
+		color: #000;
+		font-weight: 700;
+	}
+}
+
+.shared {
+	composes: home;
+	background: #ff0;
+}
+
+.isolated {
+	composes: home;
+	background: #a52a2a;
+	border: 4px inset var(--c-black);
+}
+
+.head {
+	composes: home;
+	background: #000;
+
+	a {
+		color: rgb(0, 128, 0);
+	}
+}
+
+
+.active {
+	composes: shared;
+	composes: site-title from global;
+	border-color: #9acd32;
+}

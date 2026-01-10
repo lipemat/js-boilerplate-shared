@@ -33,8 +33,24 @@
   "dependencies": {
     "@babel/preset-env": "^7.28.5",
     "@babel/preset-typescript": "^7.28.5",
+    "@csstools/postcss-global-data": "2.0.0",
+    "@types/clean-css": "^4.2.11",
+    "@types/postcss-load-config": "^3.0.1",
+    "@types/postcss-preset-env": "^7.7.0",
     "babel-plugin-transform-import-meta": "^2.3.3",
-    "core-js": "^3.33.1"
+    "browserslist": "^4.28.1",
+    "clean-css": "^5.3.3",
+    "core-js": "^3.33.1",
+    "glob": "^13.0.0",
+    "postcss": "^8.4.47",
+    "postcss-color-mod-function": "^4.1.1",
+    "postcss-custom-media": "^8.0.1",
+    "postcss-import": "^15.1.0",
+    "postcss-loader": "^8.1.1",
+    "postcss-nested": "^5.0.6",
+    "postcss-preset-env": "^7.8.3",
+    "postcss-scss": "^4.0.4",
+    "postcss-sort-media-queries": "^5.2.0"
   },
   "devDependencies": {
     "@jest/types": "^30.2.0",

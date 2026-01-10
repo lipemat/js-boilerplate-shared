@@ -1,0 +1,1 @@
+.wrap{background:#fff;border:1px solid #b0b9c4;border-radius:5px;flex:0 0 274px;height:var(--content-height);overflow:hidden;position:sticky;top:calc(var(--header-height) + 50px + var(--wp-admin--admin-bar--height,0px));width:274px}@media (--mobile){.wrap{display:none}}
