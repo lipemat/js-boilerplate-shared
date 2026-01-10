@@ -15,8 +15,9 @@
   },
   "include": [
     "index.ts",
-    "helpers/**/*.ts",
-    "jest/tests/**/*.ts",
+    "config/**/*ts",
+    "helpers/**/*ts",
+    "jest/tests/**/*ts",
     "types/**/*"
   ]
 }
