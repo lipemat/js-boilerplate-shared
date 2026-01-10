@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ~~ mklink E:\SVN\the-boilerplate\.git\modules\packages\js-boilerplate-shared\hooks\pre-commit E:\SVN\the-boilerplate\packages\js-boilerplate-shared\git-hooks\pre-commit
+# ~~ mklink E:\SVN\the-boilerplate\.git\modules\packages\js-boilerplate-shared\hooks\pre-commit E:\SVN\the-boilerplate\packages\js-boilerplate-shared\dev\git-hooks\pre-commit
 
 source /e/scripts/git/hooks/version-1/setup-colors || exit 1
 
