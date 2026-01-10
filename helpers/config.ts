@@ -80,7 +80,7 @@ export function getExtensionsConfig<T extends object>( fileName: string, default
 				}
 			}
 		}
-	} );
+	}
 
 	return mergedConfig;
 }
