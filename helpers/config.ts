@@ -10,10 +10,11 @@ const requireModule = createRequire( import.meta.url );
 
 const {dependencies, devDependencies} = getPackageConfig();
 
-const extensions = [
-	...Object.keys( dependencies ?? {} ).filter( name => name.includes( 'js-boilerplate-' ) ),
-	...Object.keys( devDependencies ?? {} ).filter( name => name.includes( 'js-boilerplate-' ) ),
-];
+const extensions = [ ...Object.keys( dependencies ), ...Object.keys( devDependencies ) ].filter( ( extension: string ) => {
+	return extension.includes( 'js-boilerplate-' ) &&
+		extension !== '@lipemat/js-boilerplate-shared' &&
+		extension !== '@lipemat/js-boilerplate';
+} );
 
 /**
  * Return the postcss config merged with any extensions
@@ -60,7 +61,7 @@ export function getPostCSSConfig(): PostcssConfig {
  */
 export function getExtensionsConfig<T extends object>( fileName: string, defaultConfig: T ): T {
 	let mergedConfig: T = {} as T;
-	extensions.forEach( extension => {
+	for ( const extension of extensions ) {
 		try {
 			let extensionConfig = requireModule( extension + '/config/' + fileName );
 			// For ES Modules, we need to use the default export.
