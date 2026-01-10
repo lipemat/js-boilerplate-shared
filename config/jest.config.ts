@@ -25,10 +25,6 @@ const jestConfig: Config = {
 		'\\.(pcss|less|css)$': 'identity-obj-proxy',
 		'is-plain-obj': 'identity-obj-proxy',
 		uuid: 'identity-obj-proxy',
-
-		// A temporary workaround for the shared package being a symlink.
-		// @todo remove once the shared package is published.
-		'^@lipemat/js-boilerplate-shared$': '<rootDir>/../../js-boilerplate-shared/index.ts',
 	},
 };
 
