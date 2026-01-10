@@ -2088,7 +2088,7 @@ __metadata:
 
 "@lipemat/eslint-config@file:../eslint-config::locator=%40lipemat%2Fjs-boilerplate-shared%40workspace%3A.":
   version: 5.1.4
-  resolution: "@lipemat/eslint-config@file:../eslint-config#../eslint-config::hash=49d8a4&locator=%40lipemat%2Fjs-boilerplate-shared%40workspace%3A."
+  resolution: "@lipemat/eslint-config@file:../eslint-config#../eslint-config::hash=7e8c56&locator=%40lipemat%2Fjs-boilerplate-shared%40workspace%3A."
   dependencies:
     "@eslint/compat": "npm:^1.2.4"
     "@eslint/eslintrc": "npm:^3.3.3"
@@ -2106,19 +2106,20 @@ __metadata:
     globals: "npm:^15.13.0"
   peerDependencies:
     typescript: ^5.9.3
-  checksum: 10c0/fb3a6bfd5a32563a1d4687f0dac68dd0ae013866d08238bed3f60d63e3e37c08df562736168c9b4364e639c03fb4b64c0e45be4a144caa2ac388cced53242e7b
+  checksum: 10c0/1e27b9518eeaf3ffbcad8c4a62bbc3b8e84ec5867b66a43151241a9675024ab0fe343e2d501f1fd534b902a4a032e8dd24d0ecdbc6f33ae80ec1d9590d46ed9f
   languageName: node
   linkType: hard
 
-"@lipemat/js-boilerplate-shared@file:../js-boilerplate-shared::locator=%40lipemat%2Feslint-config%40file%3A..%2Feslint-config%23..%2Feslint-config%3A%3Ahash%3D49d8a4%26locator%3D%2540lipemat%252Fjs-boilerplate-shared%2540workspace%253A.":
+"@lipemat/js-boilerplate-shared@file:../js-boilerplate-shared::locator=%40lipemat%2Feslint-config%40file%3A..%2Feslint-config%23..%2Feslint-config%3A%3Ahash%3D7e8c56%26locator%3D%2540lipemat%252Fjs-boilerplate-shared%2540workspace%253A.":
   version: 0.0.1
-  resolution: "@lipemat/js-boilerplate-shared@file:../js-boilerplate-shared#../js-boilerplate-shared::hash=690470&locator=%40lipemat%2Feslint-config%40file%3A..%2Feslint-config%23..%2Feslint-config%3A%3Ahash%3D49d8a4%26locator%3D%2540lipemat%252Fjs-boilerplate-shared%2540workspace%253A."
+  resolution: "@lipemat/js-boilerplate-shared@file:../js-boilerplate-shared#../js-boilerplate-shared::hash=e8eec3&locator=%40lipemat%2Feslint-config%40file%3A..%2Feslint-config%23..%2Feslint-config%3A%3Ahash%3D7e8c56%26locator%3D%2540lipemat%252Fjs-boilerplate-shared%2540workspace%253A."
   dependencies:
     "@babel/preset-env": "npm:^7.28.5"
+    "@babel/preset-typescript": "npm:^7.28.5"
     core-js: "npm:^3.33.1"
   peerDependencies:
     typescript: ^5.9.3
-  checksum: 10c0/cdd4af86e43ace41ccdf402106b0bdcc142c360e7479fca724e675b30f5310fe779d02f31aef8cbfabfbeecc686affcbd8678083e608de048b939a0226ba97b7
+  checksum: 10c0/137e25e715436bfb95ab7b0a7cb3e49560ad2a2416cc813197ba55078b673380b5838639677f7f834af93ac2b4922df09f1f378c0d008a64b88e9e9ff0371abd
   languageName: node
   linkType: hard
 
