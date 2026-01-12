@@ -14,7 +14,6 @@
     "strict": true
   },
   "include": [
-    "index.ts",
     "config/**/*ts",
     "helpers/**/*ts",
     "jest/tests/**/*ts",
