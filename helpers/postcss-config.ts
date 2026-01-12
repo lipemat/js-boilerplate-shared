@@ -2,7 +2,7 @@ import {resolve} from 'path';
 import {existsSync} from 'fs';
 import postcssPresetEnv, {type pluginOptions} from 'postcss-preset-env';
 import type Processor from 'postcss/lib/processor';
-import {getBrowsersList, getExtensionsConfig} from './config.js';
+import {getExtensionsConfig} from './config.js';
 import PrettyPlugin from '../lib/postcss-pretty.js';
 import cleanCSS from '../lib/postcss-clean.js';
 import type {Config, ConfigPlugin} from 'postcss-load-config';
@@ -10,6 +10,7 @@ import type {LoaderContext} from 'webpack';
 import type {Plugin} from 'postcss';
 import {createRequire} from 'node:module';
 import {getPackageConfig} from './package-config.js';
+import {getBrowsersList} from './browserslist.js';
 
 const requireModule = createRequire( import.meta.url );
 
@@ -51,7 +52,7 @@ const externalFiles: string[] = [];
 
 function getPresetEnvConfig(): pluginOptions {
 	const presetEnv: pluginOptions = {
-		browsers: [ ...getBrowsersList() ],
+		browsers: [ ...getBrowsersList( ) ],
 		features: {},
 	};
 

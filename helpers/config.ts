@@ -1,8 +1,5 @@
 import {getPackageConfig} from './package-config.js';
 import {createRequire} from 'node:module';
-// @ts-expect-error
-import wpBrowsers from '@wordpress/browserslist-config';
-import browserslist from 'browserslist';
 
 const requireModule = createRequire( import.meta.url );
 
@@ -53,20 +50,6 @@ export function getExtensionsConfig<T extends object>( fileName: string, default
 	return mergedConfig;
 }
 
-/**
- * Get the browserslist from the current project.
- *
- * - If specified using standard browserslist config, we will use that.
- *
- *  @link https://github.com/browserslist/browserslist#config-file
- */
-export function getBrowsersList(): readonly string[] {
-	const projectBrowsersList = browserslist();
-	if ( browserslist( browserslist.defaults ) === projectBrowsersList ) {
-		return wpBrowsers;
-	}
-	return projectBrowsersList;
-}
 
 /**
  * Ensure the file extension is .js.
