@@ -79,7 +79,7 @@ try {
  * - Allows getting the config through a callback instead of an import.
  */
 export function getPackageConfig(): PackageConfig {
-	return packageConfig;
+	return {...packageConfig, ...modifications};
 }
 
 /**
@@ -87,6 +87,11 @@ export function getPackageConfig(): PackageConfig {
  *
  * - Here mainly for testing purposes.
  */
+let modifications: Partial<PackageConfig> = {};
+
 export function modifyPackageConfig( additions: Partial<PackageConfig> ): void {
-	packageConfig = {...packageConfig, ...additions};
+	modifications = additions;
+}
+export function resetPackageConfig(): void {
+	modifications = {};
 }
