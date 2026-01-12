@@ -3,8 +3,6 @@ import {createRequire} from 'node:module';
 // @ts-expect-error
 import wpBrowsers from '@wordpress/browserslist-config';
 import browserslist from 'browserslist';
-import postCssConfig, {type PostcssConfig} from '../config/postcss.config.js';
-import {resolve} from 'path';
 
 const requireModule = createRequire( import.meta.url );
 
@@ -15,36 +13,6 @@ const extensions = [ ...Object.keys( dependencies ), ...Object.keys( devDependen
 		extension !== '@lipemat/js-boilerplate-shared' &&
 		extension !== '@lipemat/js-boilerplate';
 } );
-
-/**
- * Return the postcss config merged with any extensions
- * or local config.
- *
- * @see getConfig from @lipemat/js-boilerplate
- */
-export function getPostCSSConfig(): PostcssConfig {
-	let mergedConfig: PostcssConfig = {...postCssConfig, ...getExtensionsConfig<PostcssConfig>( 'postcss.config', postCssConfig )};
-
-	try {
-		let localConfig = createRequire( import.meta.url )( resolve( getPackageConfig().packageDirectory, 'config', 'postcss.config' ) );
-		if ( 'default' in localConfig ) {
-			localConfig = localConfig.default;
-		}
-
-		if ( 'function' === typeof localConfig ) {
-			mergedConfig = {...mergedConfig, ...localConfig( mergedConfig )};
-		} else {
-			mergedConfig = {...mergedConfig, ...localConfig};
-		}
-	} catch ( e ) {
-		if ( e instanceof Error ) {
-			if ( ! ( 'code' in e ) || ( 'MODULE_NOT_FOUND' !== e.code && 'ERR_MODULE_NOT_FOUND' !== e.code ) ) {
-				console.error( e );
-			}
-		}
-	}
-	return mergedConfig;
-}
 
 
 /**

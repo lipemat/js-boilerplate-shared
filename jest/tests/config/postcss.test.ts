@@ -3,7 +3,7 @@ import {basename} from 'path';
 import postcss, {type Plugin} from 'postcss';
 import browserslist from 'browserslist';
 import postcssPresetEnv from 'postcss-preset-env';
-import type {PostcssConfig} from '../../../config/postcss.config.js';
+import type {PostcssConfig} from '../../../helpers/postcss-config.js';
 import {sync} from 'glob';
 
 export type Fixture = {
@@ -23,7 +23,7 @@ function getPostCSSConfig(): PostcssConfig {
 	// @ts-ignore
 	let config: PostcssConfig = {};
 	jest.isolateModules( () => {
-		config = require( '../../../config/postcss.config.ts' ).default;
+		config = require( '../../../helpers/postcss-config.ts' ).getPostCSSConfig( process.env.NODE_ENV ?? 'test' );
 	} );
 	return config;
 }
