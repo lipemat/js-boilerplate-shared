@@ -5,10 +5,9 @@
   "compilerOptions": {
     "sourceMap": true
   },
-  "include": [
-    "../index.ts",
-    "../config/**/*.ts",
-    "../helpers/**/*.ts",
-    "../lib/**/*.ts"
+  "exclude": [
+    "../jest",
+    "../dev",
+    "../node_modules"
   ]
 }
