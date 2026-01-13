@@ -12,18 +12,20 @@ import {createRequire} from 'node:module';
 import {getPackageConfig} from './package-config.js';
 import {getBrowsersList} from './browserslist.js';
 
-const requireModule = createRequire( import.meta.url );
 
 export type PostcssConfig = Config & Partial<LoaderContext<Config>> & {
 	plugins: Plugin[];
 	parser: string;
 }
 
+export type ENV = 'development' | 'test' | 'production';
+
+const requireModule = createRequire( import.meta.url );
+const packageConfig = getPackageConfig();
+
 function isPluginsArray( value: ConfigPlugin[] | false ): value is ConfigPlugin[] {
 	return Array.isArray( value );
 }
-
-const packageConfig = getPackageConfig();
 
 
 /**
@@ -83,7 +85,7 @@ function getPresetEnvConfig(): pluginOptions {
 }
 
 
-export function assemblePostCssConfig( env: 'develop' | 'test' | 'production' ): PostcssConfig {
+export function assemblePostCssConfig( env: ENV ): PostcssConfig {
 	/**
 	 * Put the config together.
 	 */
@@ -131,7 +133,7 @@ export function assemblePostCssConfig( env: 'develop' | 'test' | 'production' ):
  *
  * @see getConfig from @lipemat/js-boilerplate
  */
-export function getPostCSSConfig( env: 'develop' | 'test' | 'production' ): PostcssConfig {
+export function getPostCSSConfig( env: ENV ): PostcssConfig {
 	const postCssConfig = assemblePostCssConfig( env );
 	let mergedConfig: PostcssConfig = {...postCssConfig, ...getExtensionsConfig<PostcssConfig>( 'postcss.config', postCssConfig )};
 
