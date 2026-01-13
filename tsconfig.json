@@ -16,6 +16,7 @@
   "include": [
     "config/**/*ts",
     "helpers/**/*ts",
+    "jest/jest.config.ts",
     "jest/tests/**/*ts",
     "types/**/*"
   ]

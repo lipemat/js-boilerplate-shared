@@ -4,6 +4,6 @@ export default [
 	...config,
 	{
 		// Ignore built .js files
-		ignores: [ '**/*.js', '**/*.jsx', '**/*.mjs', "jest/*" ],
+		ignores: [ '**/*.js', '**/*.jsx', '**/*.mjs', 'jest/fixtures/*', 'jest/mocks/*' ],
 	}
 ];
