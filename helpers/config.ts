@@ -3,30 +3,33 @@ import {createRequire} from 'node:module';
 
 const requireModule = createRequire( import.meta.url );
 
-const {dependencies, devDependencies} = getPackageConfig();
 
-const extensions = [ ...Object.keys( dependencies ), ...Object.keys( devDependencies ) ].filter( ( extension: string ) => {
-	return extension.includes( 'js-boilerplate-' ) &&
-		extension !== '@lipemat/js-boilerplate-shared' &&
-		extension !== '@lipemat/js-boilerplate';
-} );
+/**
+ * Get a list of installed js-boilerplate extensions.
+ *
+ * - Exclude @lipemat/js-boilerplate-shared and @lipemat/js-boilerplate
+ *   as they are libraries not extensions.
+ */
+export function getExtensions(): readonly string[] {
+	const {dependencies, devDependencies} = getPackageConfig();
 
+	return [ ...Object.keys( dependencies ), ...Object.keys( devDependencies ) ].filter( ( extension: string ) => {
+		return extension.includes( 'js-boilerplate-' ) &&
+			extension !== '@lipemat/js-boilerplate-shared' &&
+			extension !== '@lipemat/js-boilerplate';
+	} );
+}
 
 /**
  * Get a config from any existing extension's /config directories
  * merged into one.
  *
- * @param {string} fileName
- * @param {Object} defaultConfig - Default config from this package.
- *                               Used for passing to an extension callback.
- *
- * @see getConfig
- *
- * @return {Object}
+ * @param {string} fileName      - Name of the config file to load.
+ * @param {Object} defaultConfig - Default config sed for passing to an extension callback.
  */
 export function getExtensionsConfig<T extends object>( fileName: string, defaultConfig: T ): T {
 	let mergedConfig: T = {} as T;
-	for ( const extension of extensions ) {
+	for ( const extension of getExtensions() ) {
 		try {
 			let extensionConfig = requireModule( extension + '/config/' + fileName );
 			// For ES Modules, we need to use the default export.
