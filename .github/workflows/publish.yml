@@ -1,0 +1,23 @@
+##########################################################
+# Publish on npm.js
+#
+# @version 5.0.0
+#
+###########################################################
+
+name: Publish
+run-name: Publish package version ${{ github.ref_name }} on NPM.
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  publish:
+    name: Publish on npm.js
+    uses: lipemat/public-actions/.github/workflows/publish-package.yml@version/2
+    with:
+      beta: ${{ contains(github.ref_name, 'beta') }}
+      nodeVersion: '22.21.1'
+      withInstall: true
