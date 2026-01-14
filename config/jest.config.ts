@@ -1,4 +1,7 @@
 import type {Config} from 'jest';
+import {resolve} from 'path';
+import {existsSync} from 'fs';
+import {getPackageConfig} from '../helpers/package-config.js';
 
 const jestConfig: Config = {
 	globals: {
@@ -26,6 +29,10 @@ const jestConfig: Config = {
 		'is-plain-obj': 'identity-obj-proxy',
 		uuid: 'identity-obj-proxy',
 	},
+	setupFilesAfterEnv: [
+		resolve( getPackageConfig().workingDirectory, 'jest/setup.ts' ),
+		resolve( getPackageConfig().packageDirectory, 'jest/setup.ts' ),
+	].filter( existsSync ),
 };
 
 export default jestConfig;
