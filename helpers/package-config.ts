@@ -10,6 +10,7 @@ export interface PackageConfig {
 	brotliFiles: boolean;
 	certificates?: Certificates;
 	combinedJson: boolean;
+	cssEnums: boolean;
 	cssTsFiles: boolean;
 	css_folder: string;
 	default: PackageConfig;
@@ -19,11 +20,14 @@ export interface PackageConfig {
 	getPackageConfig: () => PackageConfig;
 	jsPath: string;
 	license?: string;
+	mainCssFileName: string;
 	name?: string;
 	packageDirectory: string;
 	packageManager?: string;
+	pcssWatch: string[];
 	resolutions?: Dependencies;
 	scripts: Partial<Scripts>;
+	theme_path: string;
 	shortCssClasses: boolean | {
 		js: boolean;
 		pcss: boolean;
@@ -56,15 +60,19 @@ const workingDirectory = realpathSync( process.cwd() );
 const defaults: Partial<PackageConfig> = {
 	brotliFiles: true,
 	cssTsFiles: true,
+	css_folder: './css/dist/',
 	jsPath: './js',
+	mainCssFileName: 'front-end',
 	packageDirectory: workingDirectory,
+	pcssWatch: [ 'pcss', 'template-parts' ],
 	shortCssClasses: true,
+	theme_path: './',
 	url: 'http://localhost',
 };
 
 let packageConfig: PackageConfig = readJsonFile<PackageConfig>( resolve( workingDirectory, 'package.json' ) );
 packageConfig = {...defaults, ...packageConfig};
-packageConfig.workingDirectory = packageConfig.jsPath !== '' ? resolve( packageConfig.jsPath ) : workingDirectory;
+packageConfig.workingDirectory = packageConfig.jsPath !== '' ? resolve( packageConfig.jsPath ).replace( /\\/g, '/' ) : workingDirectory;
 
 try {
 	const localConfig = readJsonFile<Partial<PackageConfig>>( resolve( workingDirectory, './local-config.json' ) );
