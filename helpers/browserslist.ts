@@ -1,4 +1,4 @@
-// @ts-expect-error
+// @ts-ignore
 import wpBrowsers from '@wordpress/browserslist-config';
 import browserslist from 'browserslist';
 
