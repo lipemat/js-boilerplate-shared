@@ -14,13 +14,7 @@ export type Resource = LoaderContext<{
 
 export type GetLocalIdent = ( context: Resource, localIdentName: string, localName: string ) => string;
 
-export type Modules =
-	| boolean
-	| 'local'
-	| 'global'
-	| 'pure'
-	| 'icss'
-	| {
+export type ObjectModules = Partial<{
 	auto: boolean | RegExp | ( ( resourcePath: string ) => boolean );
 	mode: Mode | ( ( resourcePath: string ) => Mode );
 	localIdentName: string;
@@ -51,7 +45,15 @@ export type Modules =
 		exports: object[];
 		replacements: object[];
 	} ) => Promise<void> | void;
-};
+}>;
+
+export type Modules =
+	| boolean
+	| 'local'
+	| 'global'
+	| 'pure'
+	| 'icss'
+	| ObjectModules;
 
 type Base = {
 	importLoaders?: number;
