@@ -1,6 +1,6 @@
 {
   "name": "@lipemat/js-boilerplate-shared",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "description": "Shared utilities for all @lipemat boilerplate packages",
   "engines": {
