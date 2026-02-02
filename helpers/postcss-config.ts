@@ -38,6 +38,8 @@ function isPluginsArray( value: ConfigPlugin[] | false ): value is ConfigPlugin[
  * 2. js/src/pcss/variables.pcss
  * 3. pcss/globals/media-queries.pcss
  * 4. js/src/pcss/media-queries.pcss
+ * 5. src/pcss/globals/media-queries.pcss
+ * 6. src/pcss/globals/variables.pcss
  */
 const externalFiles: string[] = [];
 [
@@ -45,6 +47,8 @@ const externalFiles: string[] = [];
 	resolve( packageConfig.packageDirectory, 'pcss/globals/variables.pcss' ),
 	resolve( packageConfig.workingDirectory, 'src/pcss/media-queries.pcss' ),
 	resolve( packageConfig.workingDirectory, 'src/pcss/variables.pcss' ),
+	resolve( packageConfig.workingDirectory, 'src/pcss/globals/media-queries.pcss' ),
+	resolve( packageConfig.workingDirectory, 'src/pcss/globals/variables.pcss' ),
 ].forEach( ( possibleFile: string ) => {
 	if ( existsSync( possibleFile ) ) {
 		externalFiles.push( possibleFile );
