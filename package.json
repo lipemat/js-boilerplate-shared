@@ -21,6 +21,9 @@
     "url": "https://github.com/lipemat/js-boilerplate-shared/issues"
   },
   "homepage": "https://github.com/lipemat/js-boilerplate-shared#readme",
+  "bin": {
+    "js-boilerplate-shared__fix-pnp": "bin/fix-pnp.ts"
+  },
   "scripts": {
     "build": "tsc --project ./bin",
     "lint": "eslint --fix --cache",
