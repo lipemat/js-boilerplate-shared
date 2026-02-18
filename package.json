@@ -1,6 +1,6 @@
 {
   "name": "@lipemat/js-boilerplate-shared",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "description": "Shared utilities for all @lipemat boilerplate packages",
   "engines": {
@@ -8,6 +8,7 @@
   },
   "type": "module",
   "files": [
+    "bin",
     "config",
     "helpers",
     "lib",
@@ -22,7 +23,7 @@
   },
   "homepage": "https://github.com/lipemat/js-boilerplate-shared#readme",
   "bin": {
-    "js-boilerplate-shared__fix-pnp": "bin/fix-pnp.ts"
+    "js-boilerplate-shared__fix-pnp": "bin/fix-pnp.js"
   },
   "scripts": {
     "build": "tsc --project ./bin",
