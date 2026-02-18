@@ -2359,6 +2359,8 @@ __metadata:
     webpack: "npm:^5.101.0"
   peerDependencies:
     typescript: ^5.9.3
+  bin:
+    js-boilerplate-shared__fix-pnp: bin/fix-pnp.ts
   languageName: unknown
   linkType: soft
 
