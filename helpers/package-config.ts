@@ -59,6 +59,7 @@ export interface Scripts {
 const workingDirectory = realpathSync( process.cwd() );
 const defaults: Partial<PackageConfig> = {
 	brotliFiles: true,
+	cssEnums: true,
 	cssTsFiles: true,
 	css_folder: './css/dist/',
 	jsPath: './js',
