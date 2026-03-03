@@ -25,6 +25,7 @@ export interface PackageConfig {
 	packageDirectory: string;
 	packageManager?: string;
 	pcssWatch: string[];
+	phpWatch: string[];
 	resolutions?: Dependencies;
 	scripts: Partial<Scripts>;
 	theme_path: string;
@@ -66,6 +67,7 @@ const defaults: Partial<PackageConfig> = {
 	mainCssFileName: 'front-end',
 	packageDirectory: workingDirectory,
 	pcssWatch: [ 'pcss', 'template-parts' ],
+	phpWatch: [ '/' ],
 	shortCssClasses: true,
 	theme_path: './',
 	url: 'http://localhost',
