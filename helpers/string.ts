@@ -6,7 +6,7 @@ export function addTrailingSlash( url: string ): string {
 	if ( '' === trimmedURL ) {
 		return url;
 	}
-	return url.replace( /\/?$/, '/' );
+	return normalizePath( url.replace( /\/?$/, '/' ) );
 }
 
 /**
@@ -17,7 +17,7 @@ export function addLeadingSlash( url: string ): string {
 	if ( '' === trimmedURL ) {
 		return url;
 	}
-	return url.replace( /^\/?/, '/' );
+	return normalizePath( url.replace( /^\/?/, '/' ) );
 }
 
 /**
@@ -28,7 +28,7 @@ export function removeLeadingSlash( url: string ): string {
 	if ( '' === trimmedURL ) {
 		return url;
 	}
-	return url.replace( /^\//, '' );
+	return normalizePath( url.replace( /^\//, '' ) );
 }
 
 /**
@@ -40,5 +40,14 @@ export function removeTrailingSlash( url: string ): string {
 	if ( '' === trimmedURL ) {
 		return url;
 	}
-	return url.replace( /\/$/, '' );
+	return normalizePath( url.replace( /\/$/, '' ) );
+}
+
+/**
+ * Normalize path separators by replacing backslashes with forward slashes.
+ *
+ * Replace Windows backslashes with forward slashes.
+ */
+export function normalizePath( path: string ): string {
+	return path.replace( /\\/g, '/' );
 }
