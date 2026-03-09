@@ -59,7 +59,6 @@ exports[`wp-externals Does not change 1`] = `
     "react": "React",
     "react-dom": "ReactDOM",
     "react-refresh/runtime": "ReactRefreshRuntime",
-    "react/jsx-runtime": "ReactJSXRuntime",
     "tinymce": "tinymce",
     "wp": "wp",
   },

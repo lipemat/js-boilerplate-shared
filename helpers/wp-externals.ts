@@ -75,11 +75,16 @@ const wpExports: { [ name: string ]: string } = [
 		wp: 'wp',
 		react: 'React',
 		'react-dom': 'ReactDOM',
+		/**
+		 * To allow React Fast Refresh (HMR) to work in WP 6.0+ we must
+		 * externalize fast refresh or dequeue `wp-react-refresh-runtime`.
+		 *
+		 * @see \wp_register_development_scripts
+		 */
 		'react-refresh/runtime': 'ReactRefreshRuntime',
 		jquery: 'jQuery',
 		tinymce: 'tinymce',
 		moment: 'moment',
-		'react/jsx-runtime': 'ReactJSXRuntime',
 		backbone: 'Backbone',
 	},
 );
