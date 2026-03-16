@@ -1,0 +1,37 @@
+{
+  "//~~": "PHPStorm will only see changes to the file if you re-save the project root's tsconfig.json file",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "JS Boilerplate",
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "lib": [
+      "DOM",
+      "ES2022"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "paths": {
+      "$src": [
+        "./js/src"
+      ],
+      "$src/*": [
+        "./js/src/*"
+      ]
+    },
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictNullChecks": true,
+    "target": "ES2022",
+    "verbatimModuleSyntax": false
+  }
+}
