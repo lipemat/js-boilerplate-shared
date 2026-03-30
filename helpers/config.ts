@@ -1,8 +1,58 @@
 import {getPackageConfig} from './package-config.js';
 import {createRequire} from 'node:module';
+import {resolve} from 'path';
 
 const requireModule = createRequire( import.meta.url );
 
+/**
+ * Merged a configuration with a matching configuration from the project directory.
+ *
+ * For instance, if we have a file named config/babel.config.js in our project,
+ * we will merge the contents with our config/babel.config.js in favor of whatever
+ * is specified with the project's file.
+ *
+ * If the default export is a function, the existing configuration will be passed
+ * as the only argument. Otherwise, standard `exports` are also supported.
+ *
+ * @example ```ts
+ * // standard
+ *export default = {
+ *     externals: {extra: 'Extra'}
+ * }
+ * // function
+ *  export default function(config) {
+ *     return {
+ *         externals: {...config.externals, extra: 'Extra'}
+ *     }
+ * }
+ * ```
+ *
+ * @param {string} fileName     - Filename without extension.
+ * @param {Object} mergedConfig - Existing config to merge with.
+ *
+ * @return {Object}
+ */
+export function mergeWithLocalConfig<T extends object>( fileName: string, mergedConfig: object = {} ): T {
+	try {
+		let localConfig = createRequire( import.meta.url )( resolve( getPackageConfig().packageDirectory, 'config', fileName.replace( /\.js$/, '' ) ) );
+		if ( 'default' in localConfig ) {
+			localConfig = localConfig.default;
+		}
+
+		if ( 'function' === typeof localConfig ) {
+			mergedConfig = {...mergedConfig, ...localConfig( mergedConfig )};
+		} else {
+			mergedConfig = {...mergedConfig, ...localConfig};
+		}
+	} catch ( e ) {
+		if ( e instanceof Error ) {
+			if ( ! ( 'code' in e ) || ( 'MODULE_NOT_FOUND' !== e.code && 'ERR_MODULE_NOT_FOUND' !== e.code ) ) {
+				console.error( e );
+			}
+		}
+	}
+	return mergedConfig as T;
+}
 
 /**
  * Get a list of installed js-boilerplate extensions.
