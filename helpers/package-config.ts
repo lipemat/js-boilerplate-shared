@@ -63,6 +63,8 @@ const defaults: Partial<PackageConfig> = {
 	cssEnums: true,
 	cssTsFiles: true,
 	css_folder: './css/dist/',
+	dependencies: {},
+	devDependencies: {},
 	jsPath: './js',
 	mainCssFileName: 'front-end',
 	packageDirectory: workingDirectory,
@@ -103,6 +105,7 @@ let modifications: Partial<PackageConfig> = {};
 export function modifyPackageConfig( additions: Partial<PackageConfig> ): void {
 	modifications = additions;
 }
+
 export function resetPackageConfig(): void {
 	modifications = {};
 }
