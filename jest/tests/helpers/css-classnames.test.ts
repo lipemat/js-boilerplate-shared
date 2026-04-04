@@ -56,6 +56,17 @@ describe( 'Test CSS Classname Generation', () => {
 		expect( getLocalIdent( makeResource( 'E:/SVN/js-boilerplate/tests/other.pcss' ), '', 'b-class' ) ).toEqual( 'C' );
 	} );
 
+
+	it( 'keeps counting across isolated module instances', () => {
+		expect( getNextClass() ).toEqual( 'A' );
+
+		jest.isolateModules( () => {
+			const isolated = jest.requireActual( '../../../helpers/css-classnames.js' ) as typeof import( '../../../helpers/css-classnames.js' );
+			expect( isolated.getNextClass() ).toEqual( 'B' );
+		} );
+	} );
+
+
 	test( 'Alphabet Length', () => {
 		expect( ALPHABET.length ).toEqual( 62 );
 		expect( SHORT_ALPHABET.length ).toEqual( 26 );

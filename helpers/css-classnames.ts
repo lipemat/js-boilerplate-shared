@@ -2,16 +2,21 @@ import {getPackageConfig} from './package-config.js';
 import type {GetLocalIdent} from '../types/css-loader.ts';
 import type {AtLeast} from '../types/utility.ts';
 
+type State = {
+	classes: {
+		[ filename: string ]: {
+			[ className: string ]: string
+		}
+	}
+	counters: number[]
+};
+
+type LocalIdentParams = Parameters<GetLocalIdent>;
+
+
 export const SHORT_ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 export const ALPHABET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-
-const classes: {
-	[ filename: string ]: {
-		[ className: string ]: string
-	}
-} = {};
-
-let counters = [ -1 ];
+const GLOBAL = '__JS_BOILERPLATE_CSS_CLASSNAMES_STATE__';
 
 /**
  * Check if short CSS classes are enabled.
@@ -34,7 +39,9 @@ export function usingShortCssClasses(): boolean {
  * @notice Mostly here for unit tests.
  */
 export function resetCounters(): void {
-	counters = [ -1 ];
+	const state = getState();
+	state.counters = [ -1 ];
+	state.classes = {};
 }
 
 /**
@@ -47,6 +54,7 @@ export function resetCounters(): void {
  * @return {string}
  */
 export function getNextClass(): string {
+	const counters = getState().counters;
 	const last = counters.length - 1;
 	let totalLetters = ALPHABET.length - 1;
 
@@ -68,6 +76,22 @@ export function getNextClass(): string {
 
 
 /**
+ * Use a global object to store state between
+ * entries in the same execution context.
+ *
+ * Prevents conflicts when webpack is running multiple entries.
+ */
+function getState(): State {
+	const globalObject = globalThis as typeof globalThis & Record<typeof GLOBAL, State>;
+
+	return globalObject[ GLOBAL ] ||= {
+		classes: {},
+		counters: [ -1 ],
+	};
+}
+
+
+/**
  * When we run out of characters on the current level:
  * 1. Increment the parent level.
  * 2. Reset the current level and all child levels back to 0.
@@ -79,6 +103,8 @@ export function getNextClass(): string {
  *
  */
 function incrementParent() {
+	const counters = getState().counters;
+
 	let parent = counters.length - 2;
 	let totalLetters = ALPHABET.length - 1;
 
@@ -104,8 +130,6 @@ function incrementParent() {
 	counters.push( 0 );
 }
 
-type LocalIdentParams = Parameters<GetLocalIdent>;
-
 /**
  * Return a single character unique CSS class name based on WebPack
  * css-loader's `getLocalIdentName` callback.
@@ -118,6 +142,8 @@ type LocalIdentParams = Parameters<GetLocalIdent>;
  * @link https://webpack.js.org/loaders/css-loader/#getlocalident
  */
 export const getLocalIdent = ( {resourcePath}: AtLeast<LocalIdentParams[0], 'resourcePath'>, _: LocalIdentParams[1], localName: LocalIdentParams[2] ): ReturnType<GetLocalIdent> => {
+	const classes = getState().classes;
+
 	classes[ resourcePath ] ||= {};
 	classes[ resourcePath ][ localName ] ||= getNextClass();
 	return classes[ resourcePath ][ localName ];
