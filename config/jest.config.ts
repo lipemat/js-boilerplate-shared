@@ -26,8 +26,6 @@ const jestConfig: Config = {
 	],
 	moduleNameMapper: {
 		'\\.(pcss|less|css)$': 'identity-obj-proxy',
-		'is-plain-obj': 'identity-obj-proxy',
-		uuid: 'identity-obj-proxy',
 	},
 	setupFilesAfterEnv: [
 		resolve( getPackageConfig().workingDirectory, 'jest/setup.ts' ),
