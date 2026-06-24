@@ -2298,12 +2298,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lipemat/js-boilerplate-shared@link:.::locator=%40lipemat%2Fjs-boilerplate-shared%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@lipemat/js-boilerplate-shared@link:.::locator=%40lipemat%2Fjs-boilerplate-shared%40workspace%3A."
-  languageName: node
-  linkType: soft
-
 "@lipemat/js-boilerplate-shared@npm:^1.0.0, @lipemat/js-boilerplate-shared@workspace:.":
   version: 0.0.0-use.local
   resolution: "@lipemat/js-boilerplate-shared@workspace:."
@@ -2313,7 +2307,7 @@ __metadata:
     "@csstools/postcss-global-data": "npm:2.0.0"
     "@jest/types": "npm:^30.2.0"
     "@lipemat/eslint-config": "npm:^5.2.0-beta.1"
-    "@lipemat/js-boilerplate-shared": "link:."
+    "@lipemat/js-boilerplate-shared": "portal:."
     "@types/babel__preset-env": "npm:^7"
     "@types/clean-css": "npm:^4.2.11"
     "@types/identity-obj-proxy": "npm:^3"
@@ -2347,6 +2341,40 @@ __metadata:
   bin:
     js-boilerplate-shared__fix-pnp: bin/fix-pnp.js
   languageName: unknown
+  linkType: soft
+
+"@lipemat/js-boilerplate-shared@portal:.::locator=%40lipemat%2Fjs-boilerplate-shared%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@lipemat/js-boilerplate-shared@portal:.::locator=%40lipemat%2Fjs-boilerplate-shared%40workspace%3A."
+  dependencies:
+    "@babel/preset-env": "npm:^7.28.5"
+    "@babel/preset-typescript": "npm:^7.28.5"
+    "@csstools/postcss-global-data": "npm:2.0.0"
+    "@types/clean-css": "npm:^4.2.11"
+    "@types/postcss-load-config": "npm:^3.0.1"
+    "@types/postcss-preset-env": "npm:^7.7.0"
+    "@types/webpack": "npm:^5.28.5"
+    "@wordpress/browserslist-config": "npm:^6.47.0"
+    babel-plugin-transform-import-meta: "npm:^2.3.3"
+    browserslist: "npm:^4.28.1"
+    clean-css: "npm:^5.3.3"
+    core-js: "npm:^3.33.1"
+    glob: "npm:^13.0.0"
+    identity-obj-proxy: "npm:^3.0.0"
+    postcss: "npm:^8.5.10"
+    postcss-color-mod-function: "npm:^4.1.1"
+    postcss-custom-media: "npm:^8.0.1"
+    postcss-import: "npm:^15.1.0"
+    postcss-loader: "npm:^8.1.1"
+    postcss-nested: "npm:^5.0.6"
+    postcss-preset-env: "npm:^7.8.3"
+    postcss-scss: "npm:^4.0.4"
+    postcss-sort-media-queries: "npm:^5.2.0"
+  peerDependencies:
+    typescript: ^5.9.3
+  bin:
+    js-boilerplate-shared__fix-pnp: bin/fix-pnp.js
+  languageName: node
   linkType: soft
 
 "@napi-rs/wasm-runtime@npm:^1.1.4":

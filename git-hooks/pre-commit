@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# ~~ mklink E:\SVN\the-boilerplate\.git\modules\packages\js-helpers\hooks\pre-commit E:\SVN\the-boilerplate\packages\js-helpers\git-hooks\pre-commit
+
+source /e/scripts/git/hooks/version-1/setup-colors || exit 1
+
+function js_build() {
+    echo "${YELLOW}[pre-commit]${BLUE} Running \`yarn build\`... ${WHITE}"
+    OUTPUT=$(yarn build 2>&1)
+    if [[ $? != 0 ]]; then
+        echo
+        echo "${BLUE}JS Build failed."
+        echo "${RED}$OUTPUT"
+        exit_reset_colors
+    fi
+    echo "${YELLOW}[pre-commit]${GREEN} JS Build Completed!${RESET_COLOR}"
+}
+js_build &
+
+
+function type_check() {
+    echo "${YELLOW}[pre-commit]${BLUE} Running Type Check... ${WHITE}"
+    OUTPUT=$(yarn validate-ts 2>&1)
+    if [[ $? != 0 ]]; then
+        echo
+        echo "${BLUE}Type Check failed. Fix the error before commit!"
+        echo "${RED}$OUTPUT"
+        exit_reset_colors
+    fi
+    echo "${YELLOW}[pre-commit]${GREEN} Type Check Passed!${RESET_COLOR}"
+}
+type_check &
+
+
+function js_lint() {
+    echo "${YELLOW}[pre-commit]${BLUE} Running JS Lint... ${WHITE}"
+    OUTPUT=$(yarn lint --fix=false 2>&1)
+    if [[ $? != 0 ]]; then
+        echo
+        echo "${BLUE}JS Lint failed. Fix the error before commit!"
+        echo "${RED}$OUTPUT"
+        exit_reset_colors
+    fi
+    echo "${YELLOW}[pre-commit]${GREEN} JS Lint Passed!${RESET_COLOR}"
+}
+js_lint &
+
+
+function js_test() {
+    echo "${YELLOW}[pre-commit]${BLUE} Running Tests... ${WHITE}"
+    OUTPUT=$(yarn test 2>&1)
+    if [[ $? != 0 ]]; then
+        echo
+        echo "${BLUE}Tests failed. Fix the error before commit!"
+        echo "${RED}$OUTPUT"
+        exit_reset_colors
+    fi
+    echo "${YELLOW}[pre-commit]${GREEN} Tests Passed!${RESET_COLOR}"
+}
+js_test &
+
+source /e/scripts/git/hooks/version-1/wait-for-jobs || exit 1
