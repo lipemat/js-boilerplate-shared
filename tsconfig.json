@@ -11,7 +11,11 @@
     "strictNullChecks": true,
     "target": "ES2024",
     "verbatimModuleSyntax": true,
-    "strict": true
+    "strict": true,
+    "types": [
+      "jest",
+      "node"
+    ]
   },
   "include": [
     "bin/**/*ts",

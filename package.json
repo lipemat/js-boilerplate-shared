@@ -59,8 +59,7 @@
     "postcss-sort-media-queries": "^5.2.0"
   },
   "devDependencies": {
-    "@jest/types": "^30.2.0",
-    "@lipemat/eslint-config": "^5.2.0-beta.1",
+    "@lipemat/eslint-config": "^5.2.1",
     "@lipemat/js-boilerplate-shared": "portal:.",
     "@types/babel__preset-env": "^7",
     "@types/identity-obj-proxy": "^3",
@@ -68,11 +67,11 @@
     "@types/node": "^22.19.3",
     "eslint": "^9",
     "jest": "^30.2.0",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.3",
     "webpack": "^5.101.0"
   },
   "peerDependencies": {
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
-  "packageManager": "yarn@4.17.0"
+  "packageManager": "yarn@4.17.1"
 }
