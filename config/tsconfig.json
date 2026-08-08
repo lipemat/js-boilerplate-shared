@@ -20,10 +20,10 @@
     "noImplicitThis": true,
     "paths": {
       "$src": [
-        "./js/src"
+        "${configDir}/js/src"
       ],
       "$src/*": [
-        "./js/src/*"
+        "${configDir}/js/src/*"
       ]
     },
     "skipLibCheck": true,
