@@ -17,10 +17,6 @@ exports[`postcss.js PostCSS config: develop 1`] = `
     {
       "plugins": [
         {
-          "postcssPlugin": "postcss-normalize-display-values",
-          "prepare": [Function],
-        },
-        {
           "AtRule": [Function],
           "postcssPlugin": "postcss-font-format-keywords",
         },
@@ -135,10 +131,6 @@ exports[`postcss.js PostCSS config: production 1`] = `
     [Function],
     {
       "plugins": [
-        {
-          "postcssPlugin": "postcss-normalize-display-values",
-          "prepare": [Function],
-        },
         {
           "AtRule": [Function],
           "postcssPlugin": "postcss-font-format-keywords",
