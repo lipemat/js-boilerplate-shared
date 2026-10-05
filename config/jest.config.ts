@@ -11,7 +11,7 @@ const jestConfig: Config = {
 		'./tests',
 	],
 	transform: {
-		'^.+\\.m?[tj]sx?$': [ 'babel-jest', {
+		'^.+\\.m?[tj]s?$': [ 'babel-jest', {
 			presets: [
 				[ '@babel/preset-env', {targets: {node: 'current'}} ],
 				'@babel/preset-typescript',
