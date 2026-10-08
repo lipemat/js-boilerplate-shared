@@ -11,6 +11,7 @@
 bin/**/*js
 config/**/*js
 helpers/**/*.js
+lib/**/*.js
 plugins/**/*.js
 *.map
 
