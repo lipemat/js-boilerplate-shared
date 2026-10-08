@@ -14,6 +14,28 @@
 import postCss, {type Helpers, type Plugin, type Root} from 'postcss';
 import CleanCSS, {type MinifierOutput, type OptionsOutput, type Output} from 'clean-css';
 
+// Clean CSS rejects animation names starting with these characters, so swap in valid identifiers while minifying.
+const PLACEHOLDERS: Array<{char: string, placeholder: string}> = [
+	{
+		char: '§',
+		placeholder: '__section_sign__',
+	},
+	{
+		char: 'Ⓜ',
+		placeholder: '__circled_m__',
+	},
+];
+
+const replacePlaceholders = ( css: string, direction: 'encode' | 'decode' ): string => {
+	return PLACEHOLDERS.reduce( ( swapped, {char, placeholder} ) => {
+		if ( 'encode' === direction ) {
+			return swapped.replaceAll( char, placeholder );
+		}
+		return swapped.replaceAll( placeholder, char );
+	}, css );
+};
+
+
 const cleaner = ( opts: OptionsOutput = {} ): Plugin => {
 	const clean: MinifierOutput = new CleanCSS( opts );
 
@@ -21,7 +43,9 @@ const cleaner = ( opts: OptionsOutput = {} ): Plugin => {
 		postcssPlugin: 'clean',
 		OnceExit( css: Root, {result}: Helpers ) {
 			return new Promise( ( resolve, reject ) => {
-				clean.minify( css.toString(), ( err, min: Output ) => {
+				const safeCss = replacePlaceholders( css.toString(), 'encode' );
+
+				clean.minify( safeCss, ( err, min: Output ) => {
 					if ( null !== err ) {
 						return reject( new Error( err.join( '\n' ) ) );
 					}
@@ -30,7 +54,8 @@ const cleaner = ( opts: OptionsOutput = {} ): Plugin => {
 						return reject( new Error( 'postcss-clean minify failed! \n' + min.warnings.join( '\n' ) ) );
 					}
 
-					result.root = postCss.parse( min.styles );
+					const restoredCss = replacePlaceholders( min.styles, 'decode' );
+					result.root = postCss.parse( restoredCss );
 					resolve();
 				} );
 			} );
